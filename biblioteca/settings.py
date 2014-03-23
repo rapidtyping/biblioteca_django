@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+# Usando unipath, sube del archivo 2 niveles (carpeta del proyecto 'biblioteca')
+from unipath import Path
+RUTA_PROYECTO = Path(__file__).ancestor(2)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -28,7 +31,10 @@ ALLOWED_HOSTS = []
 
 TEMPLATE_DIRS = (
     # '/home/ronny/Programas/DjangoApps/pruebas/biblioteca/templates',
-    os.path.join(BASE_DIR,'templates'),
+    # os.path.join(BASE_DIR,'templates'),
+    # Los anteriores modos tambien funcionan
+    # pero esta vez usaremos los del tutorial 5 de devcode.la
+    RUTA_PROYECTO.child('templates'),
 )
 
 # Application definition
