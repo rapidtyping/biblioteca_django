@@ -49,6 +49,8 @@ INSTALLED_APPS = (
     'autores',
 )
 
+MEDIA_ROOT = RUTA_PROYECTO.child('media')
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

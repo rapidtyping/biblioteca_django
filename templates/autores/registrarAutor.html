@@ -6,8 +6,12 @@
 </head>
 <body>
 	<h1>Registrar Autor</h1>
-	<form method="POST">
+	<!-- Necesario para que te permita subir archivos -->
+	<form method="POST" enctype="multipart/form-data">
+	<!-- En django te obliga a usar esto para dar seguridad a los formularios -->
+		{% csrf_token %}
 		{{form.as_p}}
+		<input type="submit" value="Registrar">
 	</form>
 </body>
 </html>
