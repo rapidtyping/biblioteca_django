@@ -51,6 +51,8 @@ INSTALLED_APPS = (
 
 MEDIA_ROOT = RUTA_PROYECTO.child('media')
 
+MEDIA_URL = 'http://127.0.0.1:8000/media/'
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

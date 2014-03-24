@@ -6,6 +6,11 @@
 </head>
 <body>
 	<h1>Todos los autores</h1>
-
+	{% for autor in autores %}
+		<li><b>Nombre</b> {{autor.nombre}}</li>
+		<li><b>Pais</b> {{autor.pais}}</li>
+		<li><b>Descripción</b> {{autor.descripcion}}</li>
+		<li><b>Foto</b><img src="{{MEDIA_URL}}{{autor.foto}}" alt=""></li>
+	{% endfor %}
 </body>
 </html>
