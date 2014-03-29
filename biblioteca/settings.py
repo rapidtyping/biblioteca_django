@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 """
 Django settings for biblioteca project.
 
@@ -94,4 +95,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
+# cap8 - Usare esta url para llamar mis archivos
 STATIC_URL = '/static/'
+
+# cap8 - Con esto le digo a django que uso esta carpeta
+# para guardar mis archivos státicos
+STATICFILES_DIRS = (
+    RUTA_PROYECTO.child('static'),
+)
