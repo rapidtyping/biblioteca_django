@@ -1,11 +1,30 @@
-<!doctype html>
-<html lang="es-PE">
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="{{STATIC_URL}}css/style.css">
-	<title>Document</title>
-</head>
-<body>
-    Esta es mi primera vista simple en django 1.5
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}
+{% endblock %}
+Inicio
+{% block content %}
+    {% if user.is_authenticated %}
+        Bienvenido     {{ user.username|capfirst }} </br>
+        <a href="/cerrar/"> Salir </a>
+    {% else %}
+	<form action="" method="POST">
+	    {% csrf_token %}
+		<label for="inputEmail">Usuario</label>
+		<div class="controls">
+			<input name="username" type="text" id="inputEmail" 
+			placeholder="Usuario">
+		</div>
+		<label for="inputPassword">Contraseña</label>
+		<div class="controls">
+			<input name="password" type="text" id="inputPassword" 
+			placeholder="Contraseña">
+		</div>
+		<div class="controls">
+			<label class="checkbox">
+			<input type="checkbox">Recordar
+			</label>
+			<button type="submit">Ingresar</button>
+		</div>
+	</form>
+	{% endif %}
+{% endblock %}

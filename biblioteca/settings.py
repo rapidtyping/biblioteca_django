@@ -48,7 +48,15 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'autores',
+    'inicio',
 )
+
+from django.core.urlresolvers import reverse_lazy
+LOGIN_URL = reverse_lazy('login')
+# cap9 - Cuando me loguee en esta caso no quiero que se redirija
+#        a otra url sino a esta misma
+LOGIN_REDIRECT_URL = reverse_lazy('login')
+LOGOUT_URL = reverse_lazy('logout')
 
 MEDIA_ROOT = RUTA_PROYECTO.child('media')
 
