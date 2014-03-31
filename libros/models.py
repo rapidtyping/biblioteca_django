@@ -9,3 +9,7 @@ class Libro(models.Model):
     
     def __unicode__(self):
         return self.nombre
+
+
+    def traer_url_portadas(self):
+        return 'http://localhost:8000/media/%s' % self.portadas
