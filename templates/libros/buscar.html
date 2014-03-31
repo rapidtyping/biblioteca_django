@@ -4,5 +4,18 @@
         {% for autor in autores %}
             <li> {{ autor.nombre }} </li>
         {% endfor %} 
+    {% else %}
+        {% for dato in datos %}
+            {# Para recorrer el diccionario #}
+            {% for libro,autor in dato.items %}
+                <label>Nombre Libro:</label><br/>
+                "{{ libro.nombre }}"<br/>
+                <label>Autor:</label>
+                {% for a in autor %}
+                    {{ a.nombre }}
+                {% endfor %}
+            {% endfor %}
+            <hr/>
+        {% endfor %}
     {% endif %}
 {% endblock %}

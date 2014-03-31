@@ -11,9 +11,13 @@ class BuscarView(TemplateView):
         buscar = request.POST['buscalo']
         libros = Libro.objects.filter(nombre__contains=buscar)
         if libros:
-            print "Pregunto por un libro"
+            datos = []
+            for libro in libros:
+                autores = libro.autor.all()
+                datos.append(dict([(libro, autores)]))
+            return render(request, 'libros/buscar.html',
+                    {'datos':datos})
         else:
             autores = Autor.objects.filter(nombre__contains=buscar) 
-            print autores 
-        return render(request, 'libros/buscar.html',
-            {'autores':autores, 'autor':True})
+            return render(request, 'libros/buscar.html',
+                    {'autores':autores, 'autor':True})
