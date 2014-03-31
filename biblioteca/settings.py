@@ -49,6 +49,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'autores',
     'inicio',
+    'libros',
 )
 
 from django.core.urlresolvers import reverse_lazy
