@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
 from .views import Registrarse
 
+
 urlpatterns = patterns('',
 
     url(r'^$' , 'django.contrib.auth.views.login',
