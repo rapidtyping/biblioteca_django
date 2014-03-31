@@ -5,6 +5,14 @@
 	<title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+    <div class="busqueda">
+        <form action="/libros/buscar/" method="POST">
+            {% csrf_token %}
+            <input type="text" name="buscalo" placeholder="Buscar">
+            <button class="btn btn-primary" 
+            type="submit">Buscar</button>
+        </form>
+    </div>
 	{% block content %}{% endblock %}
 </body>
 </html>
